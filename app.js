@@ -30,7 +30,7 @@ function limpiarLista(listaDestino) {
 //Iniciar la lista con el texto
 function inciarListaAmigosSecretos() {
     const li = document.createElement('li');
-    li.textContent = listaAmigosSecretos;
+    li.textContent = listaAmigosSecretos[0];
     document.getElementById('listaAmigos').appendChild(li);
     return;
 }
