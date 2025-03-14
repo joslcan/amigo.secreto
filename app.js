@@ -9,20 +9,26 @@ function obtenerAmigo() {
 //Guardar al amigo en la lista
 function agregarAmigo(){
     
-    //Obtener el nombre que el usuario puso en el box
-    let amigo = obtenerAmigo();
-    //Agregarlo al arreglo 
-    listaAmigosSecretos.push(amigo);
-    
-    //Actualiza la Lista
-    actualizaLista (listaAmigosSecretos,'listaAmigos');    
-    
-    //Limpia la caja para ingresar otro nombre
-    limpiarBox();
-    
-    //Activa el boton para sortear
-    activarBoton('sortear');
-    
+    if (document.getElementById('amigo').value == ''){
+        alert('Agrega un nombre valido por favor\n( No dejes el campo vacio \^\_\~ )');
+    } else {
+        //Obtener el nombre que el usuario puso en el box
+        let amigo = obtenerAmigo();
+        //Agregarlo al arreglo 
+        listaAmigosSecretos.push(amigo);
+        
+        //Actualiza la Lista
+        actualizaLista (listaAmigosSecretos,'listaAmigos');    
+        
+        //Limpia la caja para ingresar otro nombre
+        limpiarBox();
+        
+        //Activa el boton para sortear
+        activarBoton('sortear');
+        
+        //Bloquear el boton añadir
+        desactivarBoton('añadir');
+    }
 /*
     if (listaAmigosSecretos.length == 5) {
         limpiarLista('listaAmigos');
@@ -69,6 +75,7 @@ function inciarListaAmigosSecretos() {
     return;
 }
 
+/*
 //Aumentar el tamaño de la lista de amigos secretos
 function AgregarALista(arreglo,listaDestino) {
     const li = document.createElement('li');
@@ -77,13 +84,14 @@ function AgregarALista(arreglo,listaDestino) {
     document.getElementById(listaDestino).appendChild(li);
     return;
 }
+*/
 
 //Se vuelve a generar la lista con los nombres del arreglo
 //Se usaria un bucle for
 function refrescaLista (arreglo,listaDestino) {
     for (let l=1 ; l < arreglo.length ; l++) {
         const li = document.createElement('li');
-        li.textContent = arreglo[l];
+        li.textContent = `\t${arreglo[l]}`;
         li.setAttribute('type','square');
         document.getElementById(listaDestino).appendChild(li);
     }
