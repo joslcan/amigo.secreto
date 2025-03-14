@@ -17,13 +17,31 @@ function agregarAmigo(){
     listaAmigosSecretos.push(amigo);
     actualizarLista(listaAmigosSecretos,'listaAmigos');
     limpiarBox();
+
+    if (listaAmigosSecretos.length == 5) {
+        limpiarLista('listaAmigos');
+        while (listaAmigosSecretos.length != 1) {
+            listaAmigosSecretos.pop();
+        }       
+    }
+
     return;
 
 }
 
+//Elimina datos de un arreglo
+function eliminarDeLista(arreglo,indice) {
+    arreglo.splice(indice,1)
+    return;
+}
+
+
 //Limpia la lista que se indique
 function limpiarLista(listaDestino) {
-    document.getElementById(listaDestino).removeChild(li);
+    const lista = document.getElementById(listaDestino);
+    while (lista.firstChild) {
+        lista.removeChild(lista.firstChild);
+    }
     return;
 }
 
@@ -72,5 +90,18 @@ function limpiarBox(){
 
 //La funcion que sorteará un amigo
 function sortearAmigo() {
+    //Presiona el boton
+    //Se genera un numero random
+    //Se usa ese numero para seleccionar un nombre del arreglo
+    //(el numero tiene quie ser entre 1 y el largo del arreglo)
+    //Se usa ese numero para eliminar ese nombre del arreglo
+    //Se elimina la lista
+    //Se vuelve a generar la lista con los nombres del arreglo
+    //Se usaria un bucle for
+    //Se mostraria el nombre seleccionado en la lista 'resultado' con un texto adicional:
+    //Inicializar el texto adicional "Su amigo secreto es:"
+    //Cuando se vuelva a sortear, se elimina todo de la lista 'resultado' y se vuelve a generar
+    //Tambien se podria condicionar a que no se borre y que solo borre todo cuando el arreglo.length sea mayor a 1
+
     return;
 }
