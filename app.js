@@ -1,5 +1,11 @@
 let listaAmigosSecretos = [];
 
+//Obtener el nombre del amigo en el box
+function obtenerAmigo() {
+    return String(document.getElementById('amigo').value);
+}
+
+
 
 //la funcion que desactiva un boton
 function desactivarBoton(boton) {
