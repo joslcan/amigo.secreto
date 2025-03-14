@@ -19,11 +19,6 @@ function agregarAmigo(){
     limpiarBox();
     return;
 
-    /*for (let i = 0; i < listaAmigosSecretos.length; i++) {
-        let textoAmigo = listaAmigosSecretos[i];
-        asignarTextoAlElemento('ul',textoAmigo);
-    }
-    */
 }
 
 //Limpia la lista que se indique
@@ -48,8 +43,6 @@ function actualizarLista(arreglo,listaDestino) {
     document.getElementById(listaDestino).appendChild(li);
     return;
 }
-
-
 
 //la funcion que desactiva un boton
 function desactivarBoton(boton) {
