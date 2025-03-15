@@ -1,10 +1,10 @@
-/* ===Inicializacion de la lista de Amigos Secretos=== */
+/* === Inicializacion de la lista de Amigos Secretos === */
 
 let listaAmigosSecretos = ['Amigos Secretos por sortear:'];
 
 
 
-/* ===Funciones principales=== */
+/* === Funciones principales === */
 
 //Guardar al amigo en la lista
 function agregarAmigo(){
@@ -62,7 +62,7 @@ function sortearAmigo() {
 
 
 
-/* ===Funcion para generar un numero pseudo-aleatorio=== */
+/* === Funcion para generar un numero pseudo-aleatorio === */
 
 //Genera un numero pseudo-random entre el 1 y el largo del arreglo
 function calcularAleatorioSinInicial(listaDestino) {
@@ -71,7 +71,7 @@ function calcularAleatorioSinInicial(listaDestino) {
 
 
 
-/* ===Funciones para cuadros de texto=== */
+/* === Funciones para cuadros de texto === */
 
 //Obtener el nombre del amigo en el box
 function obtenerAmigo() {
@@ -93,7 +93,7 @@ function asignarTextoAlElemento(elemento,texto) {
 
 
 
-/* ===Funciones para arreglos=== */
+/* === Funciones para arreglos === */
 
 //Elimina datos de un arreglo
 function eliminarDeLista(arreglo,indice) {
@@ -103,7 +103,7 @@ function eliminarDeLista(arreglo,indice) {
 
 
 
-/* ===Funciones para las listas=== */
+/* === Funciones para las listas === */
 
 //Actualiza la lista de amigos secretos a elegir
 function actualizaLista(arreglo,listaDestino) {
@@ -143,7 +143,7 @@ function refrescaLista (arreglo,listaDestino) {
 
 
 
-/* ===Funciones para los botones=== */
+/* === Funciones para los botones === */
 
 //la funcion que desactiva un boton
 function desactivarBoton(boton) {
