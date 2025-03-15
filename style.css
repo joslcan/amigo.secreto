@@ -92,6 +92,8 @@ body {
     justify-content: center;
 }
 
+
+
 /* Estilos de entrada de texto */
 .input-title {
     flex: 1;
@@ -123,6 +125,10 @@ button {
 
 .button-add:hover {
     background-color: #a1a1a1;
+}
+
+.button-add:disabled {
+    background-color: #000;
 }
 
 /* Listas */
@@ -159,4 +165,8 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.button-draw:disabled {
+    background-color: #000;
 }

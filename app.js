@@ -91,7 +91,7 @@ function AgregarALista(arreglo,listaDestino) {
 function refrescaLista (arreglo,listaDestino) {
     for (let l=1 ; l < arreglo.length ; l++) {
         const li = document.createElement('li');
-        li.textContent = `\t${arreglo[l]}`;
+        li.textContent = arreglo[l];
         li.setAttribute('type','square');
         document.getElementById(listaDestino).appendChild(li);
     }
