@@ -128,7 +128,10 @@ button {
 }
 
 .button-add:disabled {
-    background-color: #000;
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
 }
 
 /* Listas */
@@ -168,5 +171,9 @@ ul {
 }
 
 .button-draw:disabled {
-    background-color: #000;
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-text);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
 }
