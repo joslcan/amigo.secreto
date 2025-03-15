@@ -29,16 +29,8 @@ function agregarAmigo(){
         //Bloquear el boton añadir
         desactivarBoton('añadir');
     }
-/*
-    if (listaAmigosSecretos.length == 5) {
-        limpiarLista('listaAmigos');
-        while (listaAmigosSecretos.length != 1) {
-            listaAmigosSecretos.pop();
-        }       
-    }
-*/
+    
     return;
-
 }
 
 //Actualiza la lista de amigos secretos a elegir
@@ -48,8 +40,6 @@ function actualizaLista(arreglo,listaDestino){
     refrescaLista (arreglo,listaDestino);
     return;
 }
-
-
 
 //Elimina datos de un arreglo
 function eliminarDeLista(arreglo,indice) {
@@ -75,17 +65,6 @@ function inciarListaAmigosSecretos() {
     return;
 }
 
-/*
-//Aumentar el tamaño de la lista de amigos secretos
-function AgregarALista(arreglo,listaDestino) {
-    const li = document.createElement('li');
-    li.textContent = arreglo[arreglo.length-1];
-    li.setAttribute('type','square');
-    document.getElementById(listaDestino).appendChild(li);
-    return;
-}
-*/
-
 //Se vuelve a generar la lista con los nombres del arreglo
 //Se usaria un bucle for
 function refrescaLista (arreglo,listaDestino) {
@@ -97,8 +76,6 @@ function refrescaLista (arreglo,listaDestino) {
     }
     return;
 }
-
-
 
 //la funcion que desactiva un boton
 function desactivarBoton(boton) {
@@ -125,14 +102,10 @@ function limpiarBox(){
     return;
 }
 
-
 //Genera un numero pseudo-random entre el 1 y el largo del arreglo
 function calcularAleatorioSinInicial(listaDestino){
     return Math.floor(Math.random()*(listaDestino.length-2))+1;
 }
-
- 
-
 
 //La funcion que sorteará un amigo
 function sortearAmigo() {
