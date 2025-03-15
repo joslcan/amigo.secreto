@@ -9,16 +9,16 @@ let listaAmigosSecretos = ['Amigos Secretos por sortear:'];
 //Guardar al amigo en la lista
 function agregarAmigo(){
     //Condicional por si el usuario activa el boton y quiere agregar el campo vacio
-    if (document.getElementById('amigo').value == ''){
-        alert('Agrega un nombre valido por favor\n( No dejes el campo vacio \^\_\~ )');
+    if ((document.getElementById('amigo').value == '') || document.getElementById('amigo').value.startsWith(' ')){
+        alert('Agrega un nombre valido por favor\n( No dejes el campo vacio \^\_\~ )\n( Ni empieces el nombre con espacio (\⊙\_\⊙\;))');
 
     } else {
         //Obtener el nombre del amigo
         let amigo = obtenerAmigo();
 
         //Agregarlo al arreglo 
-        listaAmigosSecretos.push(amigo);
-        
+        AgregarValorAlArreglo(listaAmigosSecretos,amigo);
+                
         //Actualiza la Lista
         actualizaLista (listaAmigosSecretos,'listaAmigos');    
         
@@ -62,6 +62,22 @@ function sortearAmigo() {
 
 
 
+/* === Funciones para arreglos === */
+
+//Agrega un valor al final del arreglo
+function AgregarValorAlArreglo(arreglo,valor) {
+    arreglo.push(valor);
+    return;
+}
+
+//Elimina datos de un arreglo
+function eliminarDeLista(arreglo,indice) {
+    arreglo.splice(indice,1);
+    return;
+}
+
+
+
 /* === Funcion para generar un numero pseudo-aleatorio === */
 
 //Genera un numero pseudo-random entre el 1 y el largo del arreglo
@@ -78,26 +94,16 @@ function obtenerAmigo() {
     return String(document.getElementById('amigo').value);
 }
 
-//La funcion que limpia una caja de texto
+//Limpia una caja de texto
 function limpiarBox() {
     document.getElementById('amigo').value = '';
     return;
 }
 
-//La funcion que asigna un texto aun elemento
+//Asigna un texto aun elemento
 function asignarTextoAlElemento(elemento,texto) {
     let elementoHTML = document.getElementById(elemento);
     elementoHTML.innerHTML = texto;
-    return;
-}
-
-
-
-/* === Funciones para arreglos === */
-
-//Elimina datos de un arreglo
-function eliminarDeLista(arreglo,indice) {
-    arreglo.splice(indice,1);
     return;
 }
 
@@ -145,14 +151,29 @@ function refrescaLista (arreglo,listaDestino) {
 
 /* === Funciones para los botones === */
 
-//la funcion que desactiva un boton
+//Desactiva un boton
 function desactivarBoton(boton) {
     document.getElementById(boton).disabled = true;
     return;
 }
 
-//La funcion que activa un boton
+//Activa un boton
 function activarBoton(boton) {
     document.getElementById(boton).disabled = false;
+    return;
+}
+
+//Revisa si la caja esta llena o si empieza con un espacio
+function revisarSiVacio(boton,box) {
+    const elementoARevisar = document.getElementById(box).value;
+    if (elementoARevisar == '') {
+        alert('\（\*\゜\ー\゜\*\）\nDejaste el campo vacio');
+        desactivarBoton(boton);
+    }
+
+    if (elementoARevisar.startsWith(' ')){
+        alert('\(\。\_\。\)\nCreo que dejaste un espacio al incio\n\(\。\_\。\)');
+        activarBoton(boton);
+    }
     return;
 }
