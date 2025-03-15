@@ -1,6 +1,5 @@
 let listaAmigosSecretos = ['Amigos Secretos por sortear:'];
 
-
 //Obtener el nombre del amigo en el box
 function obtenerAmigo() {
     return String(document.getElementById('amigo').value);
@@ -29,7 +28,7 @@ function agregarAmigo(){
         //Bloquear el boton añadir
         desactivarBoton('añadir');
     }
-    
+
     return;
 }
 
